@@ -1,0 +1,513 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;" />
+    <title>timelike boundaries</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#7464ac">
+    <meta name="msapplication-TileColor" content="#7464ac">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+body {
+  cursor: none;
+}
+.custom-cursor {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+}
+@media (width <= 800px) {
+    .middle_div {
+    height: 15%;
+    width: 100%;
+    left: 3%;
+    top: 0px;
+    text-align: center;
+    position: fixed;
+    padding: 10px;
+    overflow: hidden;
+    align-items: center;
+  }
+  .circles {
+    width: 15%; 
+    height: 80px;
+    border-radius: 50%;
+    border-width: 1px;
+    border-color: rgb(116, 100, 172);
+    border-style: solid;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    }
+    #circle01 {
+        left: 0px;
+        top: 0px;
+    }
+    #circle02 {
+        left: 18%;
+        top: -100px;
+    }
+    #circle03 {
+        left: 36%;
+        top: -200px;
+    }
+    #circle04 {
+        left: 54%;
+        top: -300px;
+    }
+    #circle05 {
+        left: 72%;
+        top: -400px;
+    }
+    .left_div {
+        height: 100%;
+        width: 30%;
+        left: 10px;
+        top: 8%;
+        text-align: center;
+        padding: -30px;
+        position: absolute;
+        z-index: -1;
+    }
+    .right_div {
+        height: 75%;
+        width: 67%;
+        left: 35%;
+        top: 25%;
+        text-align: left;
+        padding: -30px;
+        position: fixed;
+        z-index: 1; 
+        -ms-overflow-style: none; 
+        scrollbar-width: none;  
+        overflow-y: auto;
+        overflow-x: hidden;
+        flex: 1;
+    }
+    #r05_2 {
+    position: absolute;
+    top: 90%;
+    }
+    #poster_botton {
+    height: 10px;
+    width: 50px;
+    position: absolute;
+    left: 0%;
+    }
+    .poster_div {
+    display: none;
+    z-index: 10;
+    position: fixed;
+    left: 10%;
+    top: 50px;
+    pointer-events: none;
+    }
+    #poster_img{
+    width: 80%;
+    }
+}
+
+
+@media (width > 800px){
+    .middle_div {
+    height: 100%;
+    width: 20%;
+    left: 30%;
+    top: 0px;
+    text-align: center;
+    position: fixed;
+    padding: 30px;
+    z-index: 0;
+    align-items: center;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex: 1;
+    }
+    .circles {
+    width: 70%; 
+    height: 80px;
+    border-radius: 50%;
+    border-width: 1px;
+    border-color: rgb(116, 100, 172);
+    border-style: solid;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    }
+    #circle01 {
+        top: 30%;
+    }
+    #circle02 {
+        top: 28%;
+    }
+    #circle03 {
+        top: 26%;
+    }
+    #circle04 {
+        top: 24%;
+    }
+    #circle05 {
+        top: 22%;
+    }
+    .left_div {
+    height: 100%;
+    width: 30%;
+    left: 10px;
+    top: -45px;
+    text-align: center;
+    padding: -30px;
+    position: absolute;
+    z-index: -1;
+}
+.right_div {
+    height: 100%;
+    width: 48%;
+    left: 52%;
+    top: 0px;
+    text-align: left;
+    padding: -30px;
+    position: fixed;
+    z-index: 1; 
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex: 1;
+}
+#r05_2 {
+    position: absolute;
+    top: 90%;
+}
+#poster_botton {
+    height: 10px;
+    width: 50px;
+    position: absolute;
+    left: 75%;
+    
+}
+.poster_div {
+    display: none;
+    z-index: 10;
+    position: fixed;
+    left: 35%;
+    top: 50px;
+    pointer-events: none;
+}
+#poster_img{
+    width: 550px;
+}
+}
+
+/* .left_div {
+    height: 100%;
+    width: 30%;
+    left: 10px;
+    top: -45px;
+    text-align: center;
+    padding: -30px;
+    position: absolute;
+    z-index: -1;
+} */
+
+/* .middle_div {
+    height: 100%;
+    width: 20%;
+    left: 30%;
+    top: 0px;
+    text-align: center;
+    position: fixed;
+    padding: 30px;
+    z-index: 0;
+    align-items: center;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex: 1;
+} */
+#links {
+    z-index: 2;
+    text-align: center;
+}
+/* .circles {
+    width: 70%; 
+    height: 80px;
+    border-radius: 50%;
+    border-width: 1px;
+    border-color: rgb(116, 100, 172);
+    border-style: solid;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+} */
+.circles:hover {
+    border: 0;
+}
+/* #circle01 {
+    top: 30%;
+}
+#circle02 {
+    top: 28%;
+}
+#circle03 {
+    top: 26%;
+}
+#circle04 {
+    top: 24%;
+}
+#circle05 {
+    top: 22%;
+} */
+
+/* .right_div {
+    height: 100%;
+    width: 48%;
+    left: 52%;
+    top: 0px;
+    text-align: left;
+    padding: -30px;
+    position: fixed;
+    z-index: 1; 
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex: 1;
+} */
+#r02 {
+    display: none;
+}
+#r03 {
+    display: none;
+}
+#r04 {
+    display: none;
+}
+#r05 {
+    display: none;
+}
+
+/* .poster_div {
+    display: none;
+    z-index: 10;
+    position: fixed;
+    left: 35%;
+    top: 50px;
+    pointer-events: none;
+} */
+/* #poster_botton {
+    height: 10px;
+    width: 50px;
+    position: relative;
+    left: 75%;
+    
+} */
+.sono{
+    font-size: 16px;
+    font-family: "Sono";
+    letter-spacing: 0px;
+    line-height: 20px;
+    /* color: black; */
+    color: rgb(116, 100, 172);
+    font-variation-settings: 'wght' 250;
+}
+.fraunces{
+    font-family: "Fraunces";
+    font-size: 50pt;
+    color: rgb(116, 100, 172);
+    line-height: 56px;
+    font-variation-settings: 'wght' 100, 'opsz' 144, 'SOFT' 100, 'WONK' 1;
+    /* text-align: center; */
+}
+@font-face {
+    font-family: "Sono";
+    src: url(Sono[MONO,wght].ttf);
+}
+@font-face {
+    font-family: "Fraunces";
+    src: url(Fraunces[SOFT,WONK,opsz,wght].woff2);
+}
+    </style>
+</head>
+<body>
+<!-- You can edit the content from here! -->
+<!-- left section -->
+<div class="left_div"> 
+    <p class="fraunces">TIMELIKE BOUNDARIES IN THEORIES OF GRAVITY</p>
+    <div class="sono">
+        <p>5–9 August 2024<br>Morelia, Mexico</p>
+        <br><br>
+        <p>_Organisers_<br><br>Dionysios Anninos<br>(King’s College London)<br><br>Damián Galante<br>(King’s College London)<br><br>Olivier Sarbach<br>(Universidad Michoacana de San Nicolás de Hidalgo)</p>
+        <br><br>
+        <p>Sponsored by<br>Gravity Theory Trust</p>
+    <img src="logos.png" width="55%">
+    </div>
+</div>
+
+<!-- menu section -->
+<div class="middle_div">
+    <div onclick="click01()" id="circle01" class="circles">
+        <p id="links" class="sono">About the Workshop</p>
+    </div>
+    <div onclick="click02()" id="circle02" class="circles">
+        <p id="links" class="sono">Practical Information</p>
+    </div>
+    <div onclick="click03()" id="circle03" class="circles">
+        <p id="links" class="sono">Schedule</p>
+    </div>
+    <div onclick="click04()" id="circle04" class="circles">
+        <p id="links" class="sono">Public Talk</p>
+    </div>
+    <div onclick="click05()" id="circle05" class="circles">
+        <p id="links" class="sono">Contact</p>
+    </div>
+</div>
+
+<!-- right section -->
+<div class="right_div">
+    <!-- detail for about the workshop -->
+    <div id="r01" class="sono">
+        <p>The workshop aims to bring together a select group of experts in the topic of timelike boundaries in gravity, spanning various fields from mathematical relativity to quantum gravity and holography. The one-week event will provide a platform for in-depth discussions and collaboration among participants.</p>
+        <p>
+            _Participants_ <br> 
+            Alejandro Corichi (UNAM)<br>
+            Andrew Svesko (King's College London)<br>
+            Chawakorn Maneerat (King's College London)<br>
+            Eleanor Harris (ICTP, Trieste)<br>
+            Eva Silverstein (Stanford U.)<br>
+            Frederik Denef (Columbia University)<br>
+            Luis Lehner (Perimeter Institute)<br>
+            Luisa Buchmann (U. of Washington)<br>
+            Michael Anderson (Stony Brook University)<br>
+            Stephen Lau (U. of New Mexico)<br>
+            Tatjana Vukasinac (UMSMH)<br>
+            and more 
+        </p>
+        <div id="poster_botton">
+            <br><br><p id="poster">>>Poster<<</p>
+        </div>
+    </div>
+
+    <!-- detail for practical info -->
+    <div id="r02" class="sono">
+        <p>_Location_
+            <br> The meeting will take place in the beautiful UNESCO’s world heritage city of Morelia, Mexico, hosted by the Universidad Michoacana de San Nicolás de Hidalgo, the place where one of the first review articles on the subject was written.
+        </p>
+        <p>_Direction_</p>
+        <p>_Where to Stay_</p>
+    </div>
+
+    <!-- detail for schedule -->
+    <div id="r03" class="sono">
+        <p>_Schedule_</p>
+        <p>Monday the 5th</p>
+        <p>Tuesday the 6th</p>
+        <p>Wednesday the 7th</p>
+        <p>Thurday the 8th</p>
+        <p>Friday the 9th</p>
+    </div>
+
+    <!-- detail for public talk -->
+    <div id="r04" class="sono">
+        <p>_Public Talk_</p><br>
+    </div>
+
+    <!-- detail for contact -->
+    <div id="r05" class="sono">
+        <p>email: damian.galante@kcl.ac.uk</p>
+        <div id="r05_2" class="sono">
+            <p>poster and web design by Anna Srikitkul anna.srikitkul@gmail.com</p>
+        </div>
+    </div>
+
+    <!-- the end for detail pages-->
+
+</div>
+
+<div class="poster_div">
+    <img id="poster_img" src="poster_resize.png">
+</div>
+
+<!-- from this section is javascript stuff leave them here!-->
+<script>
+    document.getElementById("poster_botton").addEventListener("mouseenter", () =>{
+        document.querySelector(".poster_div").style.display = "block";
+        });
+    document.getElementById("poster_botton").addEventListener("mouseleave", () =>{
+        document.querySelector(".poster_div").style.display = "none";
+        });
+</script>
+<script>
+    var r01 = document.getElementById("r01");
+    var r02 = document.getElementById("r02");
+    var r03 = document.getElementById("r03");
+    var r04 = document.getElementById("r04");
+
+    function click01() {
+    r01.style.display = "block";
+    r02.style.display = "none";
+    r03.style.display = "none";
+    r04.style.display = "none";
+    r05.style.display = "none";
+}
+function click02() {
+    r02.style.display = "block";
+    r01.style.display = "none";
+    r03.style.display = "none";
+    r04.style.display = "none";
+    r05.style.display = "none";
+}
+function click03() {
+    r03.style.display = "block";
+    r01.style.display = "none";
+    r02.style.display = "none";
+    r04.style.display = "none";
+    r05.style.display = "none";
+}
+function click04() {
+    r04.style.display = "block";
+    r01.style.display = "none";
+    r03.style.display = "none";
+    r02.style.display = "none";
+    r05.style.display = "none";
+}
+function click05() {
+    r05.style.display = "block";
+    r01.style.display = "none";
+    r03.style.display = "none";
+    r02.style.display = "none";
+    r04.style.display = "none";
+}
+</script>
+
+<script>
+    document.addEventListener('mousemove', function (e) {
+        var cursor = document.querySelector('.custom-cursor');
+        var offsetX = e.clientX + window.pageXOffset;
+        var offsetY = e.clientY + window.pageYOffset;
+        cursor.style.left = (offsetX-25) + 'px';
+        cursor.style.top = (offsetY-25) + 'px';
+    });
+</script>
+
+<div class="custom-cursor"></div>
+
+</body>
+</html>
