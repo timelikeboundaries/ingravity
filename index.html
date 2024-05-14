@@ -26,7 +26,7 @@ body {
   pointer-events: none;
 }
 @media (max-width: 800px) {
-    .middle_div {
+    /* .middle_div {
     height: 15%;
     width: 100%;
     left: 0px;
@@ -36,8 +36,24 @@ body {
     padding: 10px;
     overflow: hidden;
     align-items: center;
-  }
-  .circles {
+  } */
+  .middle_div {
+    height: 100%;
+    width: 20%;
+    left: 0px;
+    top: 30%;
+    text-align: center;
+    position: fixed;
+    padding: 10px;
+    z-index: 0;
+    align-items: center;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex: 1;
+    }
+  /* .circles {
     width: 15%; 
     height: 80px;
     border-radius: 50%;
@@ -69,22 +85,55 @@ body {
     #circle05 {
         left: 72%;
         top: -400px;
+    } */
+    .circles {
+    width: 80%; 
+    height: 80px;
+    border-radius: 50%;
+    border-width: 1px;
+    border-color: rgb(116, 100, 172);
+    border-style: solid;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    }
+    #circle01 {
+        top: 0px;
+    }
+    #circle02 {
+        top: -2%;
+    }
+    #circle03 {
+        top: -4%;
+    }
+    #circle04 {
+        top: -6%;
+    }
+    #circle05 {
+        top: -8%;
     }
     .left_div {
-        height: 100%;
-        width: 30%;
-        left: 10px;
-        top: 15%;
+        height: 30%;
+        width: 100%;
+        left: 0px;
+        top: 0px;
         text-align: center;
-        padding: -30px;
+        padding: -20px;
         position: absolute;
         z-index: -1;
+        -ms-overflow-style: none; 
+        scrollbar-width: none;  
+        overflow-y: auto;
+        overflow-x: hidden;
+        flex: 1;
     }
     .right_div {
         height: 75%;
-        width: 67%;
-        left: 35%;
-        top: 25%;
+        width: 70%;
+        left: 30%;
+        top: 30%;
         text-align: left;
         padding: -30px;
         position: fixed;
@@ -132,6 +181,9 @@ body {
     /* color: black; */
     color: rgb(116, 100, 172);
     font-variation-settings: 'wght' 300;
+    }
+    #logo {
+        width: 30%;
     }
 }
 
@@ -245,6 +297,9 @@ body {
     color: rgb(116, 100, 172);
     font-variation-settings: 'wght' 250;
     }
+    #logo {
+        width: 55%;
+    }
 }
 
 #links {
@@ -288,7 +343,7 @@ body {
         <p>_Organisers_<br><br>Dionysios Anninos<br>(King’s College London)<br><br>Damián Galante<br>(King’s College London)<br><br>Olivier Sarbach<br>(Universidad Michoacana de San Nicolás de Hidalgo)</p>
         <br><br>
         <p>Sponsored by<br>Gravity Theory Trust</p>
-    <img src="logos.png" width="55%">
+    <img id="logo" src="logos.png">
     </div>
 </div>
 
